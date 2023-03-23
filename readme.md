@@ -10,3 +10,7 @@ hello 大家好 今天的主题是 Broadcast Channel Api
 此 Api 也是运行在 Worker 中的,所以对 UI 渲染展示没有任何影响,
 
 当然 此 Api 也是 双向访问的.
+
+### 浏览器支持说明
+
+[BroadcastChannel](./support.png)
