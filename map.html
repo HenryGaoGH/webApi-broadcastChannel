@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <style type="text/css">
+    html,
+    body {
+      margin: 0px;
+      height: 100%;
+      width: 100%;
+    }
+    .container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/maptalks/dist/maptalks.css" />
+  <script
+    type="text/javascript"
+    src="https://unpkg.com/maptalks/dist/maptalks.min.js"></script>
+  <script src="./dpo_map.js"></script>
+  <script>
+    // var map = new overriveMap(null, [], (points) => {
+    //   console.log("ssssss" + points);
+    // });
+    var bc = new BroadcastChannel("test_local_channel");
+
+    function postMsg() {
+      bc.postMessage(
+        "这是一个 Channel 信息,可以跨窗口(window) 跨Tab(标签) 跨内嵌的iFrame窗体 展示信息"
+      );
+    }
+  </script>
+
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    ">
+    <!-- <div id="map" class="container"></div> -->
+
+    <button onclick="postMsg()">send messages</button>
+
+    <iframe src="dpo_ext.html"> </iframe>
+  </body>
+</html>

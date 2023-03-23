@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    这是 BroadcastChannel 接受端,
+    <script>
+      var bc = new BroadcastChannel("test_local_channel");
+      bc.onmessage = function (msg) {
+        alert(msg.data);
+      };
+      bc.onmessageerror = function (err) {
+        alert(err);
+      };
+    </script>
+  </body>
+</html>
